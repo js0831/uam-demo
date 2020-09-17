@@ -131,6 +131,7 @@ class OrganizationComponent {
         if (this.formType === FORM_TYPE_ADD) {
             this.doAddNode();
         }
+        this.form.reset();
     }
     watchHierarchy() {
         this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])('hierarchy')).subscribe(value => {
