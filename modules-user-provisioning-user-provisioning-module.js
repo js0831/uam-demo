@@ -251,15 +251,13 @@ class OrganizationHierarchyComponent {
         this.service = service;
         this.hierarchyService = hierarchyService;
         this.node = [
-            { id: 1, name: 'SVC', parent_id: null },
-            { id: 2, name: 'Commercial Group', parent_id: 1 },
-            { id: 3, name: 'Media Group', parent_id: 1 },
-            { id: 4, name: 'The Club', parent_id: 1 },
-            { id: 5, name: 'CRM', parent_id: 4 },
-            { id: 6, name: 'Marketing', parent_id: 4 },
-            { id: 7, name: 'Customer Service', parent_id: 3 },
-            { id: 8, name: 'Direct Sales', parent_id: 3 },
-            { id: 9, name: 'Teleservice', parent_id: 2 }
+            { id: 10, name: 'Mobile Sales and Marketing', parent_id: null },
+            { id: 1, name: 'Consumer Mobile', parent_id: 10 },
+            { id: 2, name: 'CSL Marketing & Prepaid ', parent_id: 1 },
+            { id: 3, name: 'Marketing Operation', parent_id: 1 },
+            { id: 4, name: 'Brand & Communications', parent_id: 1 },
+            { id: 5, name: 'Human Resources', parent_id: 1 },
+            { id: 6, name: 'Finance', parent_id: 1 },
         ];
     }
     ngOnInit() {

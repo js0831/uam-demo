@@ -88,15 +88,13 @@ class OrganizationComponent {
     }
     ngOnInit() {
         const hierarchy = [
-            { id: 1, name: 'SVC', parent_id: null },
-            { id: 2, name: 'Commercial Group', parent_id: 1 },
-            { id: 3, name: 'Media Group', parent_id: 1 },
-            { id: 4, name: 'The Club', parent_id: 1 },
-            { id: 5, name: 'CRM', parent_id: 4 },
-            { id: 6, name: 'Marketing', parent_id: 4 },
-            { id: 7, name: 'Customer Service', parent_id: 3 },
-            { id: 8, name: 'Direct Sales', parent_id: 3 },
-            { id: 9, name: 'Teleservice', parent_id: 2 }
+            { id: 10, name: 'Mobile Sales and Marketing', parent_id: null },
+            { id: 1, name: 'Consumer Mobile', parent_id: 10 },
+            { id: 2, name: 'CSL Marketing & Prepaid ', parent_id: 1 },
+            { id: 3, name: 'Marketing Operation', parent_id: 1 },
+            { id: 4, name: 'Brand & Communications', parent_id: 1 },
+            { id: 5, name: 'Human Resources', parent_id: 1 },
+            { id: 6, name: 'Finance', parent_id: 1 },
         ];
         this.store.dispatch(Object(_store_actions_hierarchy_action__WEBPACK_IMPORTED_MODULE_3__["setNode"])({ hierarchy }));
         this.watchHierarchy();
@@ -162,6 +160,7 @@ class OrganizationComponent {
     }
     closeModal() {
         this.showEditModal = false;
+        this.form.reset();
     }
 }
 OrganizationComponent.ɵfac = function OrganizationComponent_Factory(t) { return new (t || OrganizationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_components_hierarchy_hierarchy_service__WEBPACK_IMPORTED_MODULE_4__["HierarchyService"])); };
