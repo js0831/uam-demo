@@ -421,7 +421,18 @@ class ProvisioningComponent {
         this.stepperService = stepperService;
         this.router = router;
         this.subs = [];
-        this.steps = [
+        this.isSuperAdmin = false;
+        this.departmentAdminSteps = [
+            {
+                id: 'businessrole',
+                label: 'Business Role'
+            },
+            {
+                id: 'staffinfo',
+                label: 'Staff Information'
+            }
+        ];
+        this.superAdminSteps = [
             {
                 id: 'organization',
                 label: 'Organization'
@@ -439,8 +450,12 @@ class ProvisioningComponent {
                 label: 'Staff Information'
             }
         ];
+        this.steps = [];
     }
     ngOnInit() {
+        var _a;
+        this.isSuperAdmin = ((_a = JSON.parse(localStorage.getItem('user'))) === null || _a === void 0 ? void 0 : _a.type) === 1;
+        this.steps = this.isSuperAdmin ? this.superAdminSteps : this.departmentAdminSteps;
         const savedSteps = localStorage.getItem('steps');
         this.subs.push(this.service.step.subscribe(step => this.watchStepChange(step)));
         if (savedSteps) {
