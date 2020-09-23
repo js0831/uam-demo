@@ -35,6 +35,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./guard/route-guard.guard */ "./src/app/guard/route-guard.guard.ts");
+
 
 
 
@@ -42,28 +44,28 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', redirectTo: 'provisioning', pathMatch: 'full' },
     {
+        path: 'login',
+        loadChildren: () => __webpack_require__.e(/*! import() | modules-login-login-module */ "modules-login-login-module").then(__webpack_require__.bind(null, /*! ./modules/login/login.module */ "./src/app/modules/login/login.module.ts")).then(m => m.LoginModule)
+    },
+    {
         path: 'provisioning',
-        loadChildren: () => Promise.all(/*! import() | modules-user-provisioning-user-provisioning-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-user-provisioning-user-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/user-provisioning/user-provisioning.module */ "./src/app/modules/user-provisioning/user-provisioning.module.ts")).then(m => m.UserProvisioningModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | modules-user-provisioning-user-provisioning-module */ "modules-user-provisioning-user-provisioning-module").then(__webpack_require__.bind(null, /*! ./modules/user-provisioning/user-provisioning.module */ "./src/app/modules/user-provisioning/user-provisioning.module.ts")).then(m => m.UserProvisioningModule),
+        canActivate: [_guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__["RouteGuardGuard"]]
     },
     {
         path: 'staffs',
-        loadChildren: () => Promise.all(/*! import() | modules-staff-staff-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-staff-staff-module")]).then(__webpack_require__.bind(null, /*! ./modules/staff/staff.module */ "./src/app/modules/staff/staff.module.ts")).then(m => m.StaffModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | modules-staff-staff-module */ "default~modules-organization-organization-module~modules-staff-staff-module").then(__webpack_require__.bind(null, /*! ./modules/staff/staff.module */ "./src/app/modules/staff/staff.module.ts")).then(m => m.StaffModule),
+        canActivate: [_guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__["RouteGuardGuard"]]
     },
     {
         path: 'organization',
-        loadChildren: () => Promise.all(/*! import() | modules-organization-organization-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-organization-organization-module")]).then(__webpack_require__.bind(null, /*! ./modules/organization/organization.module */ "./src/app/modules/organization/organization.module.ts")).then(m => m.OrganizationModule)
-    },
-    {
-        path: 'departments',
-        loadChildren: () => Promise.all(/*! import() | modules-department-department-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-department-department-module")]).then(__webpack_require__.bind(null, /*! ./modules/department/department.module */ "./src/app/modules/department/department.module.ts")).then(m => m.DepartmentModule)
+        loadChildren: () => Promise.all(/*! import() | modules-organization-organization-module */[__webpack_require__.e("default~modules-organization-organization-module~modules-staff-staff-module"), __webpack_require__.e("modules-organization-organization-module")]).then(__webpack_require__.bind(null, /*! ./modules/organization/organization.module */ "./src/app/modules/organization/organization.module.ts")).then(m => m.OrganizationModule),
+        canActivate: [_guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__["RouteGuardGuard"]]
     },
     {
         path: 'applications',
-        loadChildren: () => __webpack_require__.e(/*! import() | modules-application-application-module */ "modules-application-application-module").then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule)
-    },
-    {
-        path: 'business-roles',
-        loadChildren: () => __webpack_require__.e(/*! import() | modules-business-role-business-role-module */ "modules-business-role-business-role-module").then(__webpack_require__.bind(null, /*! ./modules/business-role/business-role.module */ "./src/app/modules/business-role/business-role.module.ts")).then(m => m.BusinessRoleModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | modules-application-application-module */ "modules-application-application-module").then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule),
+        canActivate: [_guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__["RouteGuardGuard"]]
     }
 ];
 class AppRoutingModule {
@@ -188,6 +190,37 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 
 /***/ }),
 
+/***/ "./src/app/guard/route-guard.guard.ts":
+/*!********************************************!*\
+  !*** ./src/app/guard/route-guard.guard.ts ***!
+  \********************************************/
+/*! exports provided: RouteGuardGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouteGuardGuard", function() { return RouteGuardGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class RouteGuardGuard {
+    canActivate(next, state) {
+        const ret = localStorage.getItem('user') !== null;
+        return ret;
+    }
+}
+RouteGuardGuard.ɵfac = function RouteGuardGuard_Factory(t) { return new (t || RouteGuardGuard)(); };
+RouteGuardGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: RouteGuardGuard, factory: RouteGuardGuard.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RouteGuardGuard, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
 /***/ "./src/app/shared/component/settings/settings.component.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/shared/component/settings/settings.component.ts ***!
@@ -199,50 +232,67 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
 
 
+
+function SettingsComponent_ul_0_Template(rf, ctx) { if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Provisioning");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Organizations");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Applications");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SettingsComponent_ul_0_Template_a_click_11_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r1.logout(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Logout");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
 class SettingsComponent {
-    constructor() { }
+    constructor(location, router) {
+        this.location = location;
+        this.router = router;
+        this.subs = [];
+        this.isLoginPage = false;
+        this.isSuperAdmin = false;
+    }
     ngOnInit() {
+        this.subs[0] = this.router.events.subscribe(x => {
+            var _a;
+            this.isLoginPage = this.location.path().indexOf('login') >= 0;
+            this.isSuperAdmin = ((_a = JSON.parse(localStorage.getItem('user'))) === null || _a === void 0 ? void 0 : _a.type) === 1;
+        });
+    }
+    ngOnDestroy() {
+        this.subs.forEach(x => x.unsubscribe());
+    }
+    logout() {
+        localStorage.removeItem('user');
+        this.router.navigate(['login']);
     }
 }
-SettingsComponent.ɵfac = function SettingsComponent_Factory(t) { return new (t || SettingsComponent)(); };
-SettingsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SettingsComponent, selectors: [["app-settings"]], decls: 19, vars: 0, consts: [[1, "nav", "justify-content-end"], [1, "nav-item"], ["routerLink", "/", 1, "nav-link"], ["routerLink", "/staffs", 1, "nav-link"], ["routerLink", "/organization", 1, "nav-link"], ["routerLink", "/departments", 1, "nav-link"], ["routerLink", "/applications", 1, "nav-link"], ["routerLink", "/business-roles", 1, "nav-link"]], template: function SettingsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Provisioning");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Staffs");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Organizations");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Departments");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Applications");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "li", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Business Roles");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]], styles: ["a[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 0.9rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudC9zZXR0aW5ncy9zZXR0aW5ncy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxpQkFBQTtBQUNKIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudC9zZXR0aW5ncy9zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImF7XHJcbiAgICBjb2xvcjojZmZmO1xyXG4gICAgZm9udC1zaXplOi45cmVtO1xyXG59Il19 */"] });
+SettingsComponent.ɵfac = function SettingsComponent_Factory(t) { return new (t || SettingsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+SettingsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SettingsComponent, selectors: [["app-settings"]], decls: 1, vars: 1, consts: [["class", "nav justify-content-end", 4, "ngIf"], [1, "nav", "justify-content-end"], [1, "nav-item"], ["routerLink", "/", 1, "nav-link"], ["routerLink", "/organization", 1, "nav-link"], ["routerLink", "/applications", 1, "nav-link"], [1, "nav-link", 3, "click"]], template: function SettingsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, SettingsComponent_ul_0_Template, 13, 0, "ul", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isLoginPage);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"]], styles: ["a[_ngcontent-%COMP%] {\n  color: #fff;\n  font-size: 0.9rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudC9zZXR0aW5ncy9zZXR0aW5ncy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxpQkFBQTtBQUNKIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudC9zZXR0aW5ncy9zZXR0aW5ncy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImF7XHJcbiAgICBjb2xvcjojZmZmO1xyXG4gICAgZm9udC1zaXplOi45cmVtO1xyXG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SettingsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -250,7 +300,7 @@ SettingsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
                 templateUrl: './settings.component.html',
                 styleUrls: ['./settings.component.scss']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 
 
 /***/ }),
