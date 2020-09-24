@@ -72,6 +72,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _data_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../data/user */ "./src/app/data/user.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _shared_components_node_node_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../shared/components/node/node.service */ "./src/app/shared/components/node/node.service.ts");
+
 
 
 
@@ -79,9 +81,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class LoginComponent {
-    constructor(formBuilder, router) {
+    constructor(formBuilder, router, nodeService) {
         this.formBuilder = formBuilder;
         this.router = router;
+        this.nodeService = nodeService;
+        this.hierarchy = [
+            { id: 1, label: '1', parent_id: null },
+            { id: 2, label: '2', parent_id: 1 },
+            { id: 3, label: '3', parent_id: 2 },
+            { id: 4, label: '4', parent_id: 2 },
+            { id: 5, label: '5', parent_id: 3 },
+            { id: 6, label: '6 Resources', parent_id: 3 },
+            { id: 7, label: '7', parent_id: 1 },
+        ];
+        this.nodes = {
+            label: 'test 2',
+            children: [
+                {
+                    label: 'sample',
+                    children: [
+                        {
+                            label: 'ABC'
+                        },
+                        {
+                            label: 'AABC',
+                            children: [
+                                {
+                                    label: 'ABC'
+                                },
+                                {
+                                    label: 'AABC',
+                                    children: [
+                                        {
+                                            label: 'ABC'
+                                        },
+                                        {
+                                            label: 'AABC'
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                { label: 'sample2' }
+            ]
+        };
         this.users = _data_user__WEBPACK_IMPORTED_MODULE_2__["DATA_USERS"];
     }
     ngOnInit() {
@@ -89,6 +134,8 @@ class LoginComponent {
         if (localStorage.getItem('user')) {
             this.router.navigate(['provisioning']);
         }
+        this.nodes = this.nodeService.formatOrg(this.hierarchy);
+        // console.log();
     }
     buildForm() {
         this.form = this.formBuilder.group({
@@ -119,7 +166,7 @@ class LoginComponent {
         };
     }
 }
-LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
+LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_components_node_node_service__WEBPACK_IMPORTED_MODULE_4__["NodeService"])); };
 LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 14, vars: 1, consts: [[1, "login"], [3, "formGroup"], [1, "form-group"], ["for", "email"], ["type", "text", "formControlName", "username", 1, "form-control"], ["for", "pwd"], ["type", "password", "formControlName", "password", 1, "form-control"], ["type", "submit", 1, "btn", "btn-primary", 3, "click"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h2");
@@ -147,7 +194,7 @@ LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.form);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"]], styles: ["[_nghost-%COMP%] {\n  display: flex;\n  height: 100%;\n}\n\n.login[_ngcontent-%COMP%] {\n  width: 20rem;\n  margin: auto;\n}\n\n.login[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 2rem;\n}\n\n.login[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  margin-left: auto;\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9sb2dpbi9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxZQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUNJO0VBQ0ksbUJBQUE7QUFDUjs7QUFFSTtFQUNJLGlCQUFBO0VBQ0EsY0FBQTtBQUFSIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9sb2dpbi9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0e1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuLmxvZ2lue1xyXG4gICAgd2lkdGg6IDIwcmVtO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG5cclxuICAgIGgye1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206MnJlbTtcclxuICAgIH1cclxuXHJcbiAgICBidXR0b24ge1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgfVxyXG59Il19 */"] });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"]], styles: ["[_nghost-%COMP%] {\n  display: flex;\n  height: 100%;\n}\n\n.login[_ngcontent-%COMP%] {\n  width: 20rem;\n  margin: auto;\n}\n\n.login[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-bottom: 2rem;\n}\n\n.login[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  margin-left: auto;\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9sb2dpbi9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxZQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUNJO0VBQ0ksbUJBQUE7QUFDUjs7QUFFSTtFQUNJLGlCQUFBO0VBQ0EsY0FBQTtBQUFSIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9sb2dpbi9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0e1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuLmxvZ2lue1xyXG4gICAgd2lkdGg6IDIwcmVtO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG5cclxuICAgIGgye1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206MnJlbTtcclxuICAgIH1cclxuXHJcbiAgICBidXR0b24ge1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgfVxyXG59XHJcblxyXG5cclxuLy8gLnNjcm9sbHtcclxuLy8gICAgIHdpZHRoOjUwMHB4O1xyXG4vLyAgICAgb3ZlcmZsb3c6YXV0bztcclxuLy8gICAgIGZsZXg6IDE7XHJcbi8vICAgICBkaXNwbGF5OiBmbGV4O1xyXG4vLyAgICAgb3ZlcmZsb3c6IGF1dG87XHJcbi8vIH0iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LoginComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -155,7 +202,48 @@ LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
                 templateUrl: './login.component.html',
                 styleUrls: ['./login.component.scss']
             }]
-    }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }]; }, null); })();
+    }], function () { return [{ type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }, { type: _shared_components_node_node_service__WEBPACK_IMPORTED_MODULE_4__["NodeService"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/node/node.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/shared/components/node/node.service.ts ***!
+  \********************************************************/
+/*! exports provided: NodeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NodeService", function() { return NodeService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class NodeService {
+    constructor() { }
+    formatOrg(hierarchy) {
+        const rootNode = this.getRootNode(hierarchy);
+        return Object.assign(Object.assign({}, rootNode), { children: this.findChildren(rootNode, hierarchy) });
+    }
+    findChildren(root, hierarchy) {
+        const children = hierarchy.filter(item => item.parent_id === root.id);
+        return children.map(item => {
+            return Object.assign(Object.assign({}, item), { children: this.findChildren(item, hierarchy) });
+        });
+    }
+    getRootNode(hierarchy) {
+        return hierarchy.filter(item => !item.parent_id)[0];
+    }
+}
+NodeService.ɵfac = function NodeService_Factory(t) { return new (t || NodeService)(); };
+NodeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: NodeService, factory: NodeService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NodeService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ })
