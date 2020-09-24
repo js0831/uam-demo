@@ -45,11 +45,11 @@ const routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     {
         path: 'login',
-        loadChildren: () => __webpack_require__.e(/*! import() | modules-login-login-module */ "modules-login-login-module").then(__webpack_require__.bind(null, /*! ./modules/login/login.module */ "./src/app/modules/login/login.module.ts")).then(m => m.LoginModule)
+        loadChildren: () => Promise.all(/*! import() | modules-login-login-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-login-login-module")]).then(__webpack_require__.bind(null, /*! ./modules/login/login.module */ "./src/app/modules/login/login.module.ts")).then(m => m.LoginModule)
     },
     {
         path: 'provisioning',
-        loadChildren: () => __webpack_require__.e(/*! import() | modules-user-provisioning-user-provisioning-module */ "modules-user-provisioning-user-provisioning-module").then(__webpack_require__.bind(null, /*! ./modules/user-provisioning/user-provisioning.module */ "./src/app/modules/user-provisioning/user-provisioning.module.ts")).then(m => m.UserProvisioningModule),
+        loadChildren: () => Promise.all(/*! import() | modules-user-provisioning-user-provisioning-module */[__webpack_require__.e("common"), __webpack_require__.e("modules-user-provisioning-user-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/user-provisioning/user-provisioning.module */ "./src/app/modules/user-provisioning/user-provisioning.module.ts")).then(m => m.UserProvisioningModule),
         canActivate: [_guard_route_guard_guard__WEBPACK_IMPORTED_MODULE_2__["RouteGuardGuard"]]
     },
     {

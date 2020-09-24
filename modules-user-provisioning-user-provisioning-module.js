@@ -1,5 +1,47 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["modules-user-provisioning-user-provisioning-module"],{
 
+/***/ "./src/app/guard/super-admin.guard.ts":
+/*!********************************************!*\
+  !*** ./src/app/guard/super-admin.guard.ts ***!
+  \********************************************/
+/*! exports provided: SuperAdminGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuperAdminGuard", function() { return SuperAdminGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _data_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/user */ "./src/app/data/user.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
+
+
+class SuperAdminGuard {
+    constructor(router) {
+        this.router = router;
+    }
+    canActivate(next, state) {
+        const ret = JSON.parse(localStorage.getItem('user'));
+        const isSuperAdmin = ret.type === _data_user__WEBPACK_IMPORTED_MODULE_1__["IPermission"].SUPER_ADMIN;
+        if (!isSuperAdmin) {
+            this.router.navigate(['provisioning/businessrole']);
+        }
+        return isSuperAdmin;
+    }
+}
+SuperAdminGuard.ɵfac = function SuperAdminGuard_Factory(t) { return new (t || SuperAdminGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+SuperAdminGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: SuperAdminGuard, factory: SuperAdminGuard.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SuperAdminGuard, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "./src/app/modules/user-provisioning/business-role/business-role.component.ts":
 /*!************************************************************************************!*\
   !*** ./src/app/modules/user-provisioning/business-role/business-role.component.ts ***!
@@ -626,6 +668,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _department_hierarchy_department_hierarchy_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./department-hierarchy/department-hierarchy.component */ "./src/app/modules/user-provisioning/department-hierarchy/department-hierarchy.component.ts");
 /* harmony import */ var _business_role_business_role_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./business-role/business-role.component */ "./src/app/modules/user-provisioning/business-role/business-role.component.ts");
 /* harmony import */ var _staff_information_staff_information_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./staff-information/staff-information.component */ "./src/app/modules/user-provisioning/staff-information/staff-information.component.ts");
+/* harmony import */ var _guard_super_admin_guard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../guard/super-admin.guard */ "./src/app/guard/super-admin.guard.ts");
+
 
 
 
@@ -642,7 +686,7 @@ const routes = [
         component: _provisioning_provisioning_component__WEBPACK_IMPORTED_MODULE_3__["ProvisioningComponent"],
         children: [
             { path: '', redirectTo: 'organization', pathMatch: 'full' },
-            { path: 'organization', component: _organization_hierarchy_organization_hierarchy_component__WEBPACK_IMPORTED_MODULE_4__["OrganizationHierarchyComponent"] },
+            { path: 'organization', component: _organization_hierarchy_organization_hierarchy_component__WEBPACK_IMPORTED_MODULE_4__["OrganizationHierarchyComponent"], canActivate: [_guard_super_admin_guard__WEBPACK_IMPORTED_MODULE_8__["SuperAdminGuard"]] },
             { path: 'department', component: _department_hierarchy_department_hierarchy_component__WEBPACK_IMPORTED_MODULE_5__["DepartmentHierarchyComponent"] },
             { path: 'businessrole', component: _business_role_business_role_component__WEBPACK_IMPORTED_MODULE_6__["BusinessRoleComponent"] },
             { path: 'staffinfo', component: _staff_information_staff_information_component__WEBPACK_IMPORTED_MODULE_7__["StaffInformationComponent"] },
