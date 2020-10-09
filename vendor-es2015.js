@@ -55060,6 +55060,352 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('10.0.
 
 /***/ }),
 
+/***/ "./node_modules/jk-wait/__ivy_ngcc__/fesm2015/jk-wait.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/jk-wait/__ivy_ngcc__/fesm2015/jk-wait.js ***!
+  \***************************************************************/
+/*! exports provided: JkWaitComponent, JkWaitModule, JkWaitService, ɵa */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JkWaitComponent", function() { return JkWaitComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JkWaitModule", function() { return JkWaitModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JkWaitService", function() { return JkWaitService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return WaitConfigService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/jk-wait.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @enum {number} */
+
+
+
+const _c0 = function (a0) { return { color: a0 }; };
+function JkWaitComponent_div_0_p_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, ctx_r1.configData.color.text));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r1.configData.text);
+} }
+const _c1 = function (a0) { return { fill: a0 }; };
+function JkWaitComponent_div_0__svg_svg_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "svg", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "g", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "animate", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "g", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "animate", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "g", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "animate", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "g", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "animate", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "g", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "animate", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "g", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "animate", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "g", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "animate", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "g", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "animate", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "g", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "animate", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "g", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "animate", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "g", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "animate", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "g", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "rect", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "animate", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](1, _c1, ctx_r2.configData.color.spinner));
+} }
+function JkWaitComponent_div_0_ng_content_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0, 0, ["*ngIf", "configData.type === 'CUSTOM'"]);
+} }
+const _c2 = function (a0) { return { background: a0 }; };
+function JkWaitComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, JkWaitComponent_div_0_p_1_Template, 2, 4, "p", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, JkWaitComponent_div_0__svg_svg_2_Template, 37, 3, "svg", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, JkWaitComponent_div_0_ng_content_3_Template, 1, 0, "ng-content", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c2, ctx_r0.configData.color.overlay));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.isTextType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.isSpinnerType);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.configData.type === "CUSTOM");
+} }
+const _c3 = ["*"];
+const E1 = {
+    A: 0, B: 1, C: 2,
+};
+E1[E1.A] = 'A';
+E1[E1.B] = 'B';
+E1[E1.C] = 'C';
+class JkWaitService {
+    constructor() {
+        this.event = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+    }
+    /**
+     * @param {?=} config
+     * @return {?}
+     */
+    start(config) {
+        this.event.next({
+            name: 'START',
+            data: config
+        });
+    }
+    /**
+     * @return {?}
+     */
+    end() {
+        this.event.next({
+            name: 'END'
+        });
+    }
+    /**
+     * @return {?}
+     */
+    get watch() {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"]((/**
+         * @param {?} i
+         * @return {?}
+         */
+        (i) => {
+            this.event.subscribe((/**
+             * @param {?} x
+             * @return {?}
+             */
+            x => {
+                i.next(x);
+            }));
+        }));
+    }
+}
+JkWaitService.ɵfac = function JkWaitService_Factory(t) { return new (t || JkWaitService)(); };
+JkWaitService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: JkWaitService, factory: JkWaitService.ɵfac, providedIn: 'root' });
+/** @nocollapse */
+JkWaitService.ctorParameters = () => [];
+/** @nocollapse */ JkWaitService.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"])({ factory: function JkWaitService_Factory() { return new JkWaitService(); }, token: JkWaitService, providedIn: "root" });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JkWaitService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return []; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/config/wait-config.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * This is not a real service, but it looks like it from the outside.
+ * It's just an InjectionTToken used to import the config object, provided from the outside
+ * @type {?}
+ */
+const WaitConfigService = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('WaitConfig');
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/jk-wait.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class JkWaitComponent {
+    /**
+     * @param {?} config
+     * @param {?} service
+     */
+    constructor(config, service) {
+        this.config = config;
+        this.service = service;
+        this.show = false;
+        this.configData = {
+            text: 'Please Wait',
+            type: 'TEXT',
+            color: {
+                text: '#fff',
+                spinner: '#fff',
+                overlay: 'rgba(51, 51, 51, 0.8)'
+            }
+        };
+        this.isTextType = false;
+        this.isSpinnerType = false;
+        this.rootConfig = config;
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.subs = this.service.watch.subscribe((/**
+         * @param {?} x
+         * @return {?}
+         */
+        x => {
+            if (x.data) {
+                this.setConfig(x.data);
+            }
+            else {
+                this.setConfig(this.rootConfig);
+            }
+            this.show = x.name === 'START';
+        }));
+    }
+    /**
+     * @private
+     * @param {?} config
+     * @return {?}
+     */
+    setConfig(config) {
+        this.configData = Object.assign({}, this.configData, config);
+        this.isTextType = (config.type === 'TEXT' || config.type === 'TEXT_SPINNER');
+        this.isSpinnerType = (config.type === 'SPINNER' || config.type === 'TEXT_SPINNER');
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this.subs.unsubscribe();
+    }
+}
+JkWaitComponent.ɵfac = function JkWaitComponent_Factory(t) { return new (t || JkWaitComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](WaitConfigService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](JkWaitService)); };
+JkWaitComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: JkWaitComponent, selectors: [["ng-jk-wait"]], ngContentSelectors: _c3, decls: 1, vars: 1, consts: [["class", "jk-wait", 3, "ngStyle", 4, "ngIf"], [1, "jk-wait", 3, "ngStyle"], ["class", "jk-wait__text", 3, "ngStyle", 4, "ngIf"], ["class", "jk-wait__spinner", "xmlns", "http://www.w3.org/2000/svg", 0, "xmlns", "xlink", "http://www.w3.org/1999/xlink", "width", "50px", "height", "50px", "viewBox", "0 0 100 100", "preserveAspectRatio", "xMidYMid", 3, "ngStyle", 4, "ngIf"], [4, "ngIf"], [1, "jk-wait__text", 3, "ngStyle"], ["xmlns", "http://www.w3.org/2000/svg", 0, "xmlns", "xlink", "http://www.w3.org/1999/xlink", "width", "50px", "height", "50px", "viewBox", "0 0 100 100", "preserveAspectRatio", "xMidYMid", 1, "jk-wait__spinner", 3, "ngStyle"], ["transform", "rotate(0 50 50)"], ["x", "47", "y", "24", "rx", "3", "ry", "6", "width", "6", "height", "12"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.9166666666666666s", "repeatCount", "indefinite"], ["transform", "rotate(30 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.8333333333333334s", "repeatCount", "indefinite"], ["transform", "rotate(60 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.75s", "repeatCount", "indefinite"], ["transform", "rotate(90 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.6666666666666666s", "repeatCount", "indefinite"], ["transform", "rotate(120 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.5833333333333334s", "repeatCount", "indefinite"], ["transform", "rotate(150 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.5s", "repeatCount", "indefinite"], ["transform", "rotate(180 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.4166666666666667s", "repeatCount", "indefinite"], ["transform", "rotate(210 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.3333333333333333s", "repeatCount", "indefinite"], ["transform", "rotate(240 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.25s", "repeatCount", "indefinite"], ["transform", "rotate(270 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.16666666666666666s", "repeatCount", "indefinite"], ["transform", "rotate(300 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "-0.08333333333333333s", "repeatCount", "indefinite"], ["transform", "rotate(330 50 50)"], ["attributeName", "opacity", "values", "1;0", "keyTimes", "0;1", "dur", "1s", "begin", "0s", "repeatCount", "indefinite"]], template: function JkWaitComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, JkWaitComponent_div_0_Template, 4, 6, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.show);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgStyle"]], styles: [".jk-wait[_ngcontent-%COMP%]{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(51,51,51,.8);display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-flow:column;color:#fff;z-index:990}.jk-wait__text[_ngcontent-%COMP%]{font-size:1rem;margin:0}.jk-wait__spinner[_ngcontent-%COMP%]{fill:#fff}"] });
+/** @nocollapse */
+JkWaitComponent.ctorParameters = () => [
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [WaitConfigService,] }] },
+    { type: JkWaitService }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JkWaitComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'ng-jk-wait',
+                template: "<div class=\"jk-wait\" *ngIf=\"show\" [ngStyle]=\"{background: (configData.color.overlay) }\">\r\n\r\n  <p\r\n    *ngIf=\"isTextType\"\r\n    [ngStyle]=\"{color: (configData.color.text) }\"\r\n    class=\"jk-wait__text\">{{configData.text}}</p>\r\n\r\n  <svg\r\n    [ngStyle]=\"{fill: (configData.color.spinner) }\"\r\n    *ngIf=\"isSpinnerType\" class=\"jk-wait__spinner\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"50px\" height=\"50px\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid\">\r\n    <g transform=\"rotate(0 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.9166666666666666s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(30 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.8333333333333334s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(60 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.75s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(90 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.6666666666666666s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(120 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.5833333333333334s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(150 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.5s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(180 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.4166666666666667s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(210 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.3333333333333333s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(240 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.25s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(270 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.16666666666666666s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(300 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"-0.08333333333333333s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g><g transform=\"rotate(330 50 50)\">\r\n      <rect x=\"47\" y=\"24\" rx=\"3\" ry=\"6\" width=\"6\" height=\"12\" >\r\n        <animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0;1\" dur=\"1s\" begin=\"0s\" repeatCount=\"indefinite\"></animate>\r\n      </rect>\r\n    </g>\r\n  </svg>\r\n\r\n  <ng-content *ngIf=\"configData.type === 'CUSTOM'\"></ng-content>\r\n</div>\r\n",
+                styles: [".jk-wait{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(51,51,51,.8);display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-flow:column;color:#fff;z-index:990}.jk-wait__text{font-size:1rem;margin:0}.jk-wait__spinner{fill:#fff}"]
+            }]
+    }], function () { return [{ type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+                args: [WaitConfigService]
+            }] }, { type: JkWaitService }]; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/jk-wait.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class JkWaitModule {
+    /**
+     * @param {?} config
+     * @return {?}
+     */
+    static forRoot(config) {
+        return {
+            ngModule: JkWaitModule,
+            providers: [
+                JkWaitService,
+                {
+                    provide: WaitConfigService,
+                    useValue: config
+                }
+            ]
+        };
+    }
+}
+JkWaitModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: JkWaitModule });
+JkWaitModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function JkWaitModule_Factory(t) { return new (t || JkWaitModule)(); }, imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](JkWaitModule, { declarations: function () { return [JkWaitComponent]; }, imports: function () { return [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]]; }, exports: function () { return [JkWaitComponent]; } }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JkWaitModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                declarations: [JkWaitComponent],
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+                ],
+                exports: [JkWaitComponent]
+            }]
+    }], null, null); })();
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: jk-wait.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+
+
+//# sourceMappingURL=jk-wait.js.map
+
+/***/ }),
+
 /***/ "./node_modules/rxjs/_esm2015/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/rxjs/_esm2015/index.js ***!
