@@ -961,7 +961,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiURL: 'http://localhost:4003/api/',
-    apiURL: 'https://quick-bear-12.loca.lt/api/',
+    apiURL: 'https://hungry-sheep-67.loca.lt/api/',
     staticData: true
 };
 /*
