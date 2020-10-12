@@ -961,7 +961,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiURL: 'http://localhost:4003/api/',
-    apiURL: 'https://hungry-sheep-67.loca.lt/api/',
+    apiURL: 'https://dry-cheetah-2.loca.lt/',
     staticData: true
 };
 /*
