@@ -1643,7 +1643,7 @@
       var environment = {
         production: false,
         // apiURL: 'http://localhost:4003/api/',
-        apiURL: 'https://stale-goose-99.loca.lt/api/',
+        apiURL: 'https://tricky-cow-4.loca.lt/api/',
         staticData: false
       };
       /*
