@@ -821,6 +821,9 @@ class ApplicationViewComponent {
     }
     generateNextOrder() {
         const keys = Object.keys(this.applicationAttributes);
+        if (keys.length === 0) {
+            return 0;
+        }
         const lastkey = keys[keys.length - 1];
         return (this.applicationAttributes[lastkey].order) + 1;
     }

@@ -1527,6 +1527,11 @@
           key: "generateNextOrder",
           value: function generateNextOrder() {
             var keys = Object.keys(this.applicationAttributes);
+
+            if (keys.length === 0) {
+              return 0;
+            }
+
             var lastkey = keys[keys.length - 1];
             return this.applicationAttributes[lastkey].order + 1;
           }
