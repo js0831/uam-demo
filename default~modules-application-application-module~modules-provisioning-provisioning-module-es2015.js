@@ -660,6 +660,24 @@ ModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
 
 /***/ }),
 
+/***/ "./src/app/shared/data/locale-mapper.ts":
+/*!**********************************************!*\
+  !*** ./src/app/shared/data/locale-mapper.ts ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const localMapper = {
+    'en-US': 1,
+    'zh-HK': 2
+};
+/* harmony default export */ __webpack_exports__["default"] = (localMapper);
+
+
+/***/ }),
+
 /***/ "./src/app/shared/pipes/itranslate.pipe.ts":
 /*!*************************************************!*\
   !*** ./src/app/shared/pipes/itranslate.pipe.ts ***!
@@ -671,18 +689,24 @@ ModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItranslatePipe", function() { return ItranslatePipe; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _data_locale_mapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/locale-mapper */ "./src/app/shared/data/locale-mapper.ts");
 
 
 
 class ItranslatePipe {
-    transform(values, ...args) {
-        if (!values || values.length === 0) {
-            return '';
+    findTranslation(translations) {
+        const localLangId = _data_locale_mapper__WEBPACK_IMPORTED_MODULE_1__["default"][navigator.language];
+        return translations.filter((x) => {
+            return x.langId === localLangId;
+        });
+    }
+    transform(translations, ...args) {
+        if (translations && translations.length > 0) {
+            const found = this.findTranslation(translations);
+            const fallback = found.length === 0 ? translations[0].value : found[0].value;
+            return fallback;
         }
-        const found = values.filter(x => x.langId === _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].language);
-        const fallback = found.length === 0 ? values[0].value : found[0].value;
-        return fallback;
+        return '';
     }
 }
 ItranslatePipe.ɵfac = function ItranslatePipe_Factory(t) { return new (t || ItranslatePipe)(); };
@@ -795,7 +819,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class LocalDataService {
-    constructor() { }
     save(what, data) {
         let newData = {
             [what]: data
@@ -844,7 +867,7 @@ LocalDataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return []; }, null); })();
+    }], null, null); })();
 
 
 /***/ }),
@@ -899,7 +922,7 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
                 declarations: [
                     _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_2__["ModalComponent"],
                     _components_language_field_language_field_component__WEBPACK_IMPORTED_MODULE_6__["LanguageFieldComponent"],
-                    _pipes_itranslate_pipe__WEBPACK_IMPORTED_MODULE_7__["ItranslatePipe"]
+                    _pipes_itranslate_pipe__WEBPACK_IMPORTED_MODULE_7__["ItranslatePipe"],
                 ],
                 exports: [
                     _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_2__["ModalComponent"],

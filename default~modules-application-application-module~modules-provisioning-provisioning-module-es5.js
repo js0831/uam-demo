@@ -1451,6 +1451,30 @@
     },
 
     /***/
+    "./src/app/shared/data/locale-mapper.ts":
+    /*!**********************************************!*\
+      !*** ./src/app/shared/data/locale-mapper.ts ***!
+      \**********************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function srcAppSharedDataLocaleMapperTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+
+      var localMapper = {
+        'en-US': 1,
+        'zh-HK': 2
+      };
+      /* harmony default export */
+
+      __webpack_exports__["default"] = localMapper;
+      /***/
+    },
+
+    /***/
     "./src/app/shared/pipes/itranslate.pipe.ts":
     /*!*************************************************!*\
       !*** ./src/app/shared/pipes/itranslate.pipe.ts ***!
@@ -1478,9 +1502,9 @@
       /* harmony import */
 
 
-      var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ../../../environments/environment */
-      "./src/environments/environment.ts");
+      var _data_locale_mapper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../data/locale-mapper */
+      "./src/app/shared/data/locale-mapper.ts");
 
       var ItranslatePipe = /*#__PURE__*/function () {
         function ItranslatePipe() {
@@ -1488,17 +1512,23 @@
         }
 
         _createClass(ItranslatePipe, [{
+          key: "findTranslation",
+          value: function findTranslation(translations) {
+            var localLangId = _data_locale_mapper__WEBPACK_IMPORTED_MODULE_1__["default"][navigator.language];
+            return translations.filter(function (x) {
+              return x.langId === localLangId;
+            });
+          }
+        }, {
           key: "transform",
-          value: function transform(values) {
-            if (!values || values.length === 0) {
-              return '';
+          value: function transform(translations) {
+            if (translations && translations.length > 0) {
+              var found = this.findTranslation(translations);
+              var fallback = found.length === 0 ? translations[0].value : found[0].value;
+              return fallback;
             }
 
-            var found = values.filter(function (x) {
-              return x.langId === _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].language;
-            });
-            var fallback = found.length === 0 ? values[0].value : found[0].value;
-            return fallback;
+            return '';
           }
         }]);
 
@@ -1805,9 +1835,7 @@
           args: [{
             providedIn: 'root'
           }]
-        }], function () {
-          return [];
-        }, null);
+        }], null, null);
       })();
       /***/
 
