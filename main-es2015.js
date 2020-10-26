@@ -42,11 +42,15 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | modules-provisioning-provisioning-module */[__webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-provisioning-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/provisioning/provisioning.module */ "./src/app/modules/provisioning/provisioning.module.ts")).then(m => m.ProvisioningModule)
+        loadChildren: () => Promise.all(/*! import() | modules-provisioning-provisioning-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-provisioning-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/provisioning/provisioning.module */ "./src/app/modules/provisioning/provisioning.module.ts")).then(m => m.ProvisioningModule)
     },
     {
         path: 'application',
-        loadChildren: () => Promise.all(/*! import() | modules-application-application-module */[__webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-application-application-module")]).then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule)
+        loadChildren: () => Promise.all(/*! import() | modules-application-application-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-application-application-module")]).then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule)
+    },
+    {
+        path: 'general-roles',
+        loadChildren: () => Promise.all(/*! import() | modules-general-roles-general-roles-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("modules-general-roles-general-roles-module")]).then(__webpack_require__.bind(null, /*! ./modules/general-roles/general-roles.module */ "./src/app/modules/general-roles/general-roles.module.ts")).then(m => m.GeneralRolesModule)
     },
 ];
 class AppRoutingModule {
