@@ -42,15 +42,15 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | modules-provisioning-provisioning-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-provisioning-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/provisioning/provisioning.module */ "./src/app/modules/provisioning/provisioning.module.ts")).then(m => m.ProvisioningModule)
+        loadChildren: () => Promise.all(/*! import() | modules-provisioning-provisioning-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("common"), __webpack_require__.e("modules-provisioning-provisioning-module")]).then(__webpack_require__.bind(null, /*! ./modules/provisioning/provisioning.module */ "./src/app/modules/provisioning/provisioning.module.ts")).then(m => m.ProvisioningModule)
     },
     {
         path: 'application',
-        loadChildren: () => Promise.all(/*! import() | modules-application-application-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("default~modules-application-application-module~modules-provisioning-provisioning-module"), __webpack_require__.e("modules-application-application-module")]).then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule)
+        loadChildren: () => Promise.all(/*! import() | modules-application-application-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("modules-application-application-module")]).then(__webpack_require__.bind(null, /*! ./modules/application/application.module */ "./src/app/modules/application/application.module.ts")).then(m => m.ApplicationModule)
     },
     {
         path: 'general-roles',
-        loadChildren: () => Promise.all(/*! import() | modules-general-roles-general-roles-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("modules-general-roles-general-roles-module")]).then(__webpack_require__.bind(null, /*! ./modules/general-roles/general-roles.module */ "./src/app/modules/general-roles/general-roles.module.ts")).then(m => m.GeneralRolesModule)
+        loadChildren: () => Promise.all(/*! import() | modules-general-roles-general-roles-module */[__webpack_require__.e("default~modules-application-application-module~modules-general-roles-general-roles-module~modules-pr~85f9d3a2"), __webpack_require__.e("common"), __webpack_require__.e("modules-general-roles-general-roles-module")]).then(__webpack_require__.bind(null, /*! ./modules/general-roles/general-roles.module */ "./src/app/modules/general-roles/general-roles.module.ts")).then(m => m.GeneralRolesModule)
     },
 ];
 class AppRoutingModule {
@@ -136,11 +136,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var jk_wait__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jk-wait */ "./node_modules/jk-wait/__ivy_ngcc__/fesm2015/jk-wait.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/__ivy_ngcc__/fesm2015/ngrx-store.js");
+/* harmony import */ var _shared_store_reducers_application_management_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/store/reducers/application-management.reducer */ "./src/app/shared/store/reducers/application-management.reducer.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var jk_wait__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jk-wait */ "./node_modules/jk-wait/__ivy_ngcc__/fesm2015/jk-wait.js");
+
+
+
 
 
 
@@ -152,34 +157,83 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            jk_wait__WEBPACK_IMPORTED_MODULE_6__["JkWaitModule"].forRoot({ type: 'SPINNER' }),
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+            jk_wait__WEBPACK_IMPORTED_MODULE_8__["JkWaitModule"].forRoot({ type: 'SPINNER' }),
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["StoreModule"].forRoot({
+                applicationManagement: _shared_store_reducers_application_management_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]
+            })
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], jk_wait__WEBPACK_IMPORTED_MODULE_6__["JkWaitModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], jk_wait__WEBPACK_IMPORTED_MODULE_8__["JkWaitModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+        _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"], _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["StoreRootModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+                    _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                    jk_wait__WEBPACK_IMPORTED_MODULE_6__["JkWaitModule"].forRoot({ type: 'SPINNER' }),
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+                    jk_wait__WEBPACK_IMPORTED_MODULE_8__["JkWaitModule"].forRoot({ type: 'SPINNER' }),
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"],
+                    _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["StoreModule"].forRoot({
+                        applicationManagement: _shared_store_reducers_application_management_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]
+                    })
                 ],
                 providers: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/shared/store/actions/application-management.action.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/shared/store/actions/application-management.action.ts ***!
+  \***********************************************************************/
+/*! exports provided: createApplication */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createApplication", function() { return createApplication; });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/__ivy_ngcc__/fesm2015/ngrx-store.js");
+
+const createApplication = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[APPLICATION] create application', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
+
+
+/***/ }),
+
+/***/ "./src/app/shared/store/reducers/application-management.reducer.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/shared/store/reducers/application-management.reducer.ts ***!
+  \*************************************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/__ivy_ngcc__/fesm2015/ngrx-store.js");
+/* harmony import */ var _actions_application_management_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/application-management.action */ "./src/app/shared/store/actions/application-management.action.ts");
+
+
+const initialState = {
+    applications: []
+};
+const applicationManagementReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_application_management_action__WEBPACK_IMPORTED_MODULE_1__["createApplication"], (state, action) => (Object.assign(Object.assign({}, state), action.payload))));
+function reducer(state, action) {
+    return applicationManagementReducer(state, action);
+}
 
 
 /***/ }),

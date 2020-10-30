@@ -1503,8 +1503,6 @@
             }
 
             this.applicationAttributes = this.applicationAttributes.map(function (x) {
-              console.log(x.order + ' = ' + data.order + ' - ' + newOrder);
-
               if (data.order > newOrder) {
                 if (x.order === data.order) {
                   x.order = newOrder;
